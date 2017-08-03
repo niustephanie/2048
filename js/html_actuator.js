@@ -47,6 +47,18 @@ HTMLActuator.prototype.clearContainer = function (container) {
 };
 
 HTMLActuator.prototype.addTile = function (tile) {
+  var words = {};
+  words[2] = "so much depends";
+  words[4] = "upon";
+
+  words[8] = "a red wheel";
+  words[16] = "barrow";
+
+  words[32] = "glazed with rain";
+  words[64] = "water";
+
+  words[128] = "beside the white";
+  words[256] = "chickens.";
   var self = this;
 
   var wrapper   = document.createElement("div");
@@ -62,7 +74,7 @@ HTMLActuator.prototype.addTile = function (tile) {
   this.applyClasses(wrapper, classes);
 
   inner.classList.add("tile-inner");
-  inner.textContent = tile.value;
+  inner.textContent = words[tile.value];
 
   if (tile.previousPosition) {
     // Make sure that the tile gets rendered in the previous position first
